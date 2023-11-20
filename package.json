@@ -1,0 +1,21 @@
+{
+  "name": "application-api",
+  "version": "0.0.1",
+  "description": "An application to handle the api requests",
+  "main": "index.js",
+  "scripts": {
+    "start:apiserver": "node src/api-server/index.js",
+    "start:loadbalancer": "node src/load-balancer/index.js"
+  },
+  "author": "Gagandeep",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
