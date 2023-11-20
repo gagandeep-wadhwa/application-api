@@ -14,8 +14,10 @@ npm install
 ```
 - Build and run the project
 ```
-npm start:apiserver
-Open a new Terminal/Command Prompt Window and Run
+npm run start:apiserver
+```
+- Open a new Terminal/Command Prompt Window and Run
+```
 npm start:loadbalancer
 ```
   Open any postman or similar application to invoke the post web api request to the load balancer with route
