@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { CONSECUTIVE_FAILURE_THRESHOLD } = require('../util/const');
-const { appInstances } = require('../util/const');
+const { appInstances , getRandomInt} = require('../util/const');
 
 let currentIndex = 0;
 
@@ -44,7 +44,7 @@ async function performHealthChecks() {
 }
 
 
-function getNextHealthyInstance() {
+function getHealthyInstance() {
   for (let i = 0; i < appInstances.length; i++) {
     const targetInstance = appInstances[currentIndex];
 
@@ -55,8 +55,7 @@ function getNextHealthyInstance() {
     }
   }
 
-  sleep(5000);
-  return getNextHealthyInstance();
+  return appInstances[getRandomInt(3)];
 }
 
-module.exports = { getNextHealthyInstance, performHealthChecks };
+module.exports = { getHealthyInstance, performHealthChecks };
